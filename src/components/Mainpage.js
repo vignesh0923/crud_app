@@ -35,10 +35,16 @@ const Mainpage = () => {
     axios
       .get(`http://localhost:3030/hello?name=${searchTerm}`)
       .then(function (data) {
-        console.log(data.data)
-        setStudents(data.data)
+        console.log(data.data);
+        setStudents(data.data);
       });
   };
+
+  function searchFunc(e) {
+    console.log(e.target.value);
+    setSearchTerm(e.target.value);
+    handlesearch()
+  }
 
   return (
     <div>
@@ -49,7 +55,7 @@ const Mainpage = () => {
             type="search"
             placeholder="Search"
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={searchFunc}
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
