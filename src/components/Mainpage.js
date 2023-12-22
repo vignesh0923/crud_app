@@ -111,7 +111,7 @@ const Mainpage = () => {
       </div>
       <table
         border={1}
-        cellPadding={"20px"}
+        cellPadding={"40px"}
         cellSpacing={"0px"}
         className="maintable"
       >
