@@ -82,8 +82,8 @@ const Mainpage = () => {
           />
           <svg 
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
           >
@@ -140,7 +140,7 @@ const Mainpage = () => {
                 <td>{item.Dob}</td>
                 <td>{item.Education}</td>
                 <td>
-                  <Link to={"/update/" + item.ID} style={{textDecoration:"none"}}>
+                  <Link to={"/update/" + item.ID} style={{textDecoration:"none", color:"#4C5EFF"}}>
                     <i
                       style={{ color: "#4C5EFF" }}
                       class="fa-solid fa-user-pen"
@@ -149,7 +149,7 @@ const Mainpage = () => {
                   </Link>
                 </td>
                 <td
-                  style={{ color: "#FF4C4C", textDecoration: "none" }}
+                  style={{ color: "#FF4C4C", textDecoration: "none", cursor:"pointer"}}
                   onClick={() => {
                     deletestudent(item.ID);
                   }}
@@ -178,7 +178,7 @@ const Mainpage = () => {
                       fill="#FF4C4C"
                     />
                   </svg>
-                  <span>Delete</span>
+                  Delete
                 </td>
               </tr>
             );

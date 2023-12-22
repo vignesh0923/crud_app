@@ -9,7 +9,7 @@ import Updateuser from "./components/Updateuser";
 const App = () => {
   return (
     <div>
-      <ToastContainer/>
+      <ToastContainer style={{position:"absolute", top:"10px", left:"50%" , transform: 'translateX(-50%)'}}/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Mainpage />} />

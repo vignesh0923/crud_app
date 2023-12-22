@@ -10,24 +10,23 @@ form {
 h3 {
   color: #000;
   font-size: 26px;
-  font-style: normal;
   font-weight: 600;
-  line-height: normal;
   margin-left: 30px;
   margin-right: 30px;
 }
 
 form input {
-  padding-top: 10px;
+  padding-top: 15px;
   padding-right: 100px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   padding-left: 10px;
-  color: #a9a9a9;
+  color: black;
   font-size: 18px;
   font-weight: 300;
-  color: black;
-  width: 70%;
+  width:60%;
   font-family: Outfit;  
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
 
@@ -35,9 +34,7 @@ form input {
 label {
   color: #000;
   font-size: 23px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
 }
 tr,
 td {
@@ -68,9 +65,4 @@ input::placeholder {
   font-family: Outfit;
   font-size: 18px;
   font-weight: 300;
-}
-
-
-input[type="date"]{
-  width: 100%;
 }

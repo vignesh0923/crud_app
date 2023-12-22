@@ -13,16 +13,14 @@ h3 {
   height: 50px;
   color: #fff;
   font-size: 18px;
-  font-style: normal;
+  cursor: pointer;
   font-weight: 600;
-  line-height: normal;
   border: none;
 }
 
 .searchbar {
   width: 398px;
   height: 51px;
-  flex-shrink: 0;
   border-radius: 5px;
   border: 0.5px solid #a9a9a9;
 }
@@ -33,15 +31,13 @@ h3 {
 .searchbar input {
   color: black;
   font-size: 18px;
-  font-style: normal;
+  font-family: Outfit;
   font-weight: 500;
-  line-height: normal;
   width: 309px;
   height: 22px;
-  flex-shrink: 0;
   outline: none;
   border: none;
-  margin: 15px;
+  margin: 13px;
 }
 
 
