@@ -17,12 +17,6 @@ h3 {
   margin-right: 30px;
 }
 
-form div {
-  margin: 10px;
-  flex-basis: 40%;
-  flex-grow: 1;
-}
-
 form input {
   padding-top: 10px;
   padding-right: 100px;
@@ -30,11 +24,13 @@ form input {
   padding-left: 10px;
   color: #a9a9a9;
   font-size: 18px;
-  font-style: normal;
   font-weight: 300;
-  line-height: normal;
   color: black;
+  width: 70%;
+  font-family: Outfit;  
 }
+
+
 
 label {
   color: #000;
@@ -50,24 +46,21 @@ td {
 
 textarea {
   color: #000;
-
-  font-family: "Poppins", sans-serif;
   font-size: 18px;
-  font-style: normal;
   font-weight: 300;
-  line-height: normal;
+  font-family: Outfit;  
 }
 
-input[type="submit"]{
+input[type="submit"] {
   border-radius: 30px;
   background: #000;
   width: 150px;
   height: 55px;
   border: none;
-  text-align: center;
   color: white;
   font-size: 23px;
   font-weight: 500;
+  padding-right: 20px;
 }
 
 input::placeholder {
@@ -76,4 +69,8 @@ input::placeholder {
   font-size: 18px;
   font-weight: 300;
 }
-input[type="date"]::-webkit-calendar-picker-indicator {
+
+
+input[type="date"]{
+  width: 100%;
+}

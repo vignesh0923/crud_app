@@ -147,7 +147,7 @@ const Updateuser = () => {
             <td>
               <input
                 type="Date"
-                style={{ width: "47%" }}
+                style={{ width: "70%" }}
                 onChange={handleinputsubmit}
                 value={Dob}
                 name="Dob"
@@ -188,7 +188,7 @@ const Updateuser = () => {
             </td>
             <td colSpan={4}>
               <textarea
-                style={{ height: "100px", width: "90%" }}
+                style={{ height: "100px", width: "96%", padding:"10px" }}
                 placeholder="Enter your details"
                 onChange={handleinputsubmit}
                 name="About"

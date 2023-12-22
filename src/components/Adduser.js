@@ -2,10 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Adduser.css";
 import { useState, useEffect } from "react";
-import { toast } from 'react-toastify';
-import axios from "axios"
-import { useParams,Link } from "react-router-dom";
-
+import { toast } from "react-toastify";
+import axios from "axios";
+import { useParams, Link } from "react-router-dom";
 
 const intialState = {
   FirstName: "",
@@ -14,59 +13,67 @@ const intialState = {
   Email: "",
   Dob: "",
   Education: "",
-  About: ""
-}
-
+  About: "",
+};
 
 const Adduser = () => {
-
-  const [state , setState] = useState(intialState)
-  const {id} = useParams();
+  const [state, setState] = useState(intialState);
+  const { id } = useParams();
   const navigate = useNavigate();
- 
- const {FirstName, LastName, Location, Email, Dob, Education, About} = state;
 
+  const { FirstName, LastName, Location, Email, Dob, Education, About } = state;
 
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3030/${id}`)
+      .then((resp) => setState({ ...resp.data[0] }));
+  }, [id]);
 
- useEffect(()=>{
-  axios
-     .get(`http://localhost:3030/${id}`)
-     .then((resp)=>setState({...resp.data[0]}));
- },[id]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      !FirstName ||
+      !LastName ||
+      !Location ||
+      !Email ||
+      !Dob ||
+      !Education ||
+      !About
+    ) {
+      toast.error("Please Provide value into each input feild");
+    } else {
+      axios
+        .post("http://localhost:3030/post", {
+          FirstName,
+          LastName,
+          Location,
+          Email,
+          Dob,
+          Education,
+          About,
+        })
+        .then(() => {
+          setState({
+            FirstName: "",
+            LastName: "",
+            Location: "",
+            Email: "",
+            Dob: "",
+            Education: "",
+            About: "",
+          });
+        })
+        .catch((err) => toast.error(err.response.data));
+      toast.success("Studentsdetais Added Successfully");
+      setTimeout(() => navigate("/"), 500);
+    }
+  };
 
+  const handleinputsubmit = (e) => {
+    const { name, value } = e.target;
+    setState({ ...state, [name]: value });
+  };
 
-
-
- const handleSubmit = (e) =>{
-  e.preventDefault();
-  if(!FirstName || !LastName || !Location  || !Email || !Dob || !Education || !About ){
-    alert("Please Provide value into each input feild")
-  }else{
-    axios.post("http://localhost:3030/post",{
-      FirstName,
-      LastName,
-      Location,
-      Email,
-      Dob,
-      Education,
-      About
-    }).then(()=>{
-      setState({FirstName: "", LastName: "", Location: "", Email: "", Dob: "", Education: "", About: ""});
-    }).catch((err) => toast.error(err.response.data))
-    toast.success("Studentsdetais Added Successfully")
-    setTimeout(()=> navigate("/"),500)
-  }
- };
-
- const handleinputsubmit = (e) => {
-  const {name, value} = e.target;
-  setState({...state, [name]: value});
- }
-
-
-  
-
-  
   return (
     <div>
       <svg
@@ -132,7 +139,7 @@ const Adduser = () => {
             </td>
             <td>
               <input
-                 name="Email"
+                name="Email"
                 type="email"
                 placeholder="Enter your email"
                 value={Email || ""}
@@ -146,7 +153,7 @@ const Adduser = () => {
             <td>
               <input
                 type="Date"
-                style={{ width: "47%" }}
+                style={{ width: "70%" }}
                 onChange={handleinputsubmit}
                 value={Dob || ""}
                 name="Dob"
@@ -187,7 +194,7 @@ const Adduser = () => {
             </td>
             <td colSpan={4}>
               <textarea
-                style={{ height: "100px", width: "90%" }}
+                style={{ height: "100px", width: "96%", padding:"10px" }}
                 placeholder="Enter your details"
                 onChange={handleinputsubmit}
                 name="About"
