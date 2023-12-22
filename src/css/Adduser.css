@@ -74,7 +74,6 @@ input::placeholder {
   color: #a9a9a9;
   font-family: Outfit;
   font-size: 18px;
-  font-style: normal;
   font-weight: 300;
-  line-height: normal;
 }
+input[type="date"]::-webkit-calendar-picker-indicator {
